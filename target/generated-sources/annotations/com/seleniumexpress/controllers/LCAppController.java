@@ -2,6 +2,8 @@ package com.seleniumexpress.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -21,7 +23,7 @@ System.out.println("called");
     }
 
     @RequestMapping("/process-homepage")
-    public String showResultPage ( @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult bindingResult){
+    public String showResultPage (@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult bindingResult){
 
 
         if(bindingResult.hasErrors()){

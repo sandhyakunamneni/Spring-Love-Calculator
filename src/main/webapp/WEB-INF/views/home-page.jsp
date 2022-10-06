@@ -24,7 +24,9 @@
     }
 </style>
 <form:form action="process-homepage" method="get" modelAttribute="userInfo">
-
+  <div align="right">
+  <a href="/Spring-LoveCalculator/register">Register</a>
+  </div>
     <div align="center">
         <p>
             <label for="yn">Yor Name:</label>
@@ -35,7 +37,13 @@
             <label for="cn">Crush Name:</label>
             <form:input  id="cn" path="crushName"/>
         </p>
+        <p>
+        <form:checkbox path="termsandconditions"/>
+        <label>I am agreeing this for fun</label>
+         <form:errors path="termsandconditions" cssClass="error"/>
+        </p>
         <input type="submit" value="Calculate">
+        
     </div>
 </form:form>
 </body>

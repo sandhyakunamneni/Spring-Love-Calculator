@@ -25,6 +25,8 @@ Hobbies:
 <br>
 Password: ${userRegistrationInfo.password}
 
+Email :${userRegistrationInfo.communicationDTO.email}
 
+Phone :${userRegistrationInfo.communicationDTO.phone}
 </body>
 </html>

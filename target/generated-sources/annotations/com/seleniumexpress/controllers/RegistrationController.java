@@ -9,7 +9,7 @@ import com.seleniumexpress.api.UserRegistrationDTO;
 @Controller
 public class RegistrationController {
 
-    @RequestMapping("/registration")
+    @RequestMapping("/register")
     public String setRegistrationUser(@ModelAttribute("userRegistrationInfo")UserRegistrationDTO userRegistrationDTO){
         return "registration-page";
     }
