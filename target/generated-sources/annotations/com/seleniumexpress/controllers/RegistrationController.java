@@ -1,6 +1,12 @@
 package com.seleniumexpress.controllers;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,7 +21,17 @@ public class RegistrationController {
     }
 
     @RequestMapping("/registration-sucess")
-    public String registrationSucess(@ModelAttribute("userRegistrationInfo")UserRegistrationDTO registrationDTO){
-        return "registration-success";
+    public String registrationSucess(@Valid @ModelAttribute("userRegistrationInfo")UserRegistrationDTO registrationDTO, BindingResult result){
+       if(result.hasErrors())
+       {
+    	   List<ObjectError> allErrors=result.getAllErrors();
+    	   for(ObjectError err:allErrors)
+    	   {
+    		   System.out.println(err);
+    	   }
+    	   return "registration-page";
+       }
+    	
+    	return "registration-success";
     }
 }

@@ -11,6 +11,14 @@
 <html>
 <head>
     <title>Home Page</title>
+    <style type="text/css">
+    .error{
+        color: red;
+        position: fixed;
+        text-align: left;
+        margin-left: 30px;
+    }
+</style>
 </head>
 <body>
 <h1 align="center"> Love Calulator</h1>
@@ -28,6 +36,11 @@
         <p>
             <label for="pw">Password:</label>
             <form:password id="pw" path="password"/>
+        </p>
+         <p>
+            <label for="age">Age:</label>
+            <form:input id="age" path="age"/>
+            <form:errors path="age" cssClass="error"/>
         </p>
         <p>
         <td>Country:</td>
