@@ -1,4 +1,4 @@
-package com.seleniumexpress.api.formatters;
+package com.seleniumexpress.formatters;
 
 import java.text.ParseException;
 import java.util.Locale;

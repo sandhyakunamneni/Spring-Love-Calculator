@@ -14,11 +14,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.seleniumexpress.api.formatters.PhoneFormatter;
+import com.seleniumexpress.formatters.PhoneFormatter;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.seleniumexpress.controllers")
+@ComponentScan(basePackages = {"com.seleniumexpress.controllers","com.seleniumexpress.validators"})
 public class LoveCalculatorConfig implements WebMvcConfigurer{
 
 //    Set up view resolver

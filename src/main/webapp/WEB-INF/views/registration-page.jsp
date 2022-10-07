@@ -28,10 +28,12 @@
         <p>
             <label for="yn">Name:</label>
             <form:input id="yn" path="name"/>
+            <form:errors path="name" cssClass="error"/>
         </p>
         <p>
             <label for="un">User Name:</label>
             <form:input id="un" path="userName"/>
+            <form:errors path="userName" cssClass="error"/>
         </p>
         <p>
             <label for="pw">Password:</label>
@@ -70,6 +72,7 @@
        <label>email</label>
        
        <form:input path="communicationDTO.email"/>
+        <form:errors path="communicationDTO.email" cssClass="error"/>
         </p>
        <p>
        <label>Phone</label>

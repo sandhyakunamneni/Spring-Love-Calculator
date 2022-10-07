@@ -1,4 +1,4 @@
-package com.seleniumexpress.api.validators;
+package com.seleniumexpress.validators;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

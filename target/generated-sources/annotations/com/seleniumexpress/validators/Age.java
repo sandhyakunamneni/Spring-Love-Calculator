@@ -1,4 +1,4 @@
-package com.seleniumexpress.api.validators;
+package com.seleniumexpress.validators;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
