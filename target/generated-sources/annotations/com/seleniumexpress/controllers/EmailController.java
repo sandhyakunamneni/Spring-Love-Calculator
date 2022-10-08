@@ -2,18 +2,25 @@ package com.seleniumexpress.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.seleniumexpress.api.EmailDTO;
 import com.seleniumexpress.api.UserInfoDTO;
+import com.seleniumexpress.service.EmailService;
+import com.seleniumexpress.service.EmailServiceImpl;
 
 @Controller
 public class EmailController {
+	
+	@Autowired
+	private EmailService emailService;
 
 	// using path variable to store userName
 
@@ -52,8 +59,10 @@ public class EmailController {
 //	}
 	
 	@RequestMapping("/sendemail")
-	public String emailSentPage(@ModelAttribute("emailDTO") EmailDTO emailDTO) {
-
+	public String emailSentPage(@SessionAttribute("userInfo") UserInfoDTO userInfoDTO,@ModelAttribute("emailDTO") EmailDTO emailDTO) {
+         
+		
+		emailService.sendEmail(emailDTO.getUserEmail(),"FRIEND",userInfoDTO.getUserName());
 	
 		return "emailSuccessPage";
 	}

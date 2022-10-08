@@ -13,7 +13,7 @@
 <body>
 <h1 align="center"> Love Calculator</h1>
 <hr>
-The love calculator predicts ${userInfo.userName} & ${userInfo.crushName} are soulmates!
+The love calculator predicts ${userInfo.userName} & ${userInfo.crushName} have ${result}!
 
 <br/>
 <a href="/Spring-LoveCalculator/email">Send mail </a>
